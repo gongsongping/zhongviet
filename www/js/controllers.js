@@ -64,11 +64,11 @@ angular.module('starter.controllers', [])
 
 })
 
-.controller('HomeCtrl', function($scope, $http, $state, $rootScope, $window, $resource, Cafe ) {
+.controller('HomeCtrl', function($scope, $http, $state, $rootScope, $window, $resource, Cafe, Product ) {
   $scope.photos = []; $scope.page = 0; $scope.lastId = 0; $scope.limit = 5; $scope.dataLength = $scope.limit
   $scope.loadMore = function() {
     if ($scope.dataLength == $scope.limit){
-      Cafe.get({id:0, page: $scope.page, lastId: $scope.lastId})
+      Product.get({id:0, page: $scope.page, lastId: $scope.lastId})
       .$promise.then(function(data) {
         console.log(JSON.stringify(data))
         $scope.dataLength = data.photos.length
@@ -84,8 +84,8 @@ angular.module('starter.controllers', [])
   $scope.loadMore()
 })
 
-.controller('UphotoCtrl', function($scope, $http, $state, $rootScope, $window, Qiniu, Cafe) {
-  $scope.cafe = {content:''}; $scope.temfiles = []
+.controller('UphotoCtrl', function($scope, $http, $state, $rootScope, $window, Qiniu, Cafe, Product) {
+  $scope.product = {content:''}; $scope.temfiles = []
   $scope.listFiles = function(f) {
     $scope.temfiles.push(f) // console.log($scope.cafe.content)
   }
@@ -97,9 +97,9 @@ angular.module('starter.controllers', [])
       Qiniu.ngFileUp($scope.temfiles[0]).then(function (resp) {
         // console.log('Success ' + resp.config.data.file.name + 'uploaded. Response: ' + resp.data.key + JSON.stringify(resp.data))
         // http://7xj5ck.com1.z0.glb.clouddn.com/2015-11-28T06%3A11%3A25.113Z
-        $scope.cafe.key = resp.data.key
-        var cafe = new Cafe($scope.cafe) //{key: resp.data.key, content: $scope.content})
-        cafe.$save(function(data) {
+        $scope.product.key = resp.data.key
+        var product = new Product($scope.product) //{key: resp.data.key, content: $scope.content})
+        product.$save(function(data) {
           $state.go('tab.home', {}, {reload: true})
         })
       }, function (resp) {
@@ -111,10 +111,10 @@ angular.module('starter.controllers', [])
   }
 })
 
-.controller('CafeCtrl', function($scope, $http, $rootScope, $state, $window, $resource, Cafe) {
+.controller('CafeCtrl', function($scope, $http, $rootScope, $state, $window, $resource, Cafe, Product) {
   $scope.photos = []; $scope.page = 0; $scope.lastId = 0; $scope.limit = 5; $scope.dataLength = $scope.limit
   $scope.loadMore = function() {
-      Cafe.query({page: $scope.page, lastId: $scope.lastId})
+      Product.query({page: $scope.page, lastId: $scope.lastId})
       .$promise.then(function(data) {
         console.log(JSON.stringify(data))
         $scope.photos = $scope.photos.concat(data)
@@ -125,11 +125,11 @@ angular.module('starter.controllers', [])
 
 })
 
-.controller('UsersIdCtrl', function($scope, $http, $state, $rootScope, $stateParams, $window, $resource, Cafe) {
+.controller('UsersIdCtrl', function($scope, $http, $state, $rootScope, $stateParams, $window, $resource, Cafe, Product) {
   $scope.photos = []; $scope.page = 0; $scope.lastId = 0; $scope.limit = 5; $scope.dataLength = $scope.limit
   $scope.loadMore = function() {
     if ($scope.dataLength == $scope.limit){
-      Cafe.get({id:$stateParams.id, page: $scope.page, lastId: $scope.lastId})
+      Product.get({id:$stateParams.id, page: $scope.page, lastId: $scope.lastId})
       .$promise.then(function(data) {
         console.log(JSON.stringify(data))
         $scope.dataLength = data.photos.length

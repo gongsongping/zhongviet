@@ -22,6 +22,9 @@ angular.module('starter.services', [])
 .factory('Cafe', function($resource, $rootScope) {
   return $resource($rootScope.baseUrl + '/api/cafes/:id');
 })
+.factory('Product', function($resource, $rootScope) {
+  return $resource($rootScope.baseUrl + '/api/products/:id');
+})
 
 .factory('Qiniu', function($window, $http ,Upload) {
   return {
