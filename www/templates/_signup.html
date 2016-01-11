@@ -3,16 +3,40 @@
   <form >
     <div class="list">
       <label class="item item-input">
-        <span class="input-label">ten cafe</span>
-        <input type="text" placeholder="ten cafe" ng-model="signupData.name" >
+        <span class="input-label">ten cong ty|公司名</span>
+        <input type="text" placeholder="" ng-model="signupData.name" >
+      </label>
+      <label class="item item-input item-select">
+        <div class="input-label">
+          quoc tich|国家
+        </div>
+        <select ng-model="signupData.nationality">
+          <option selected>vietnam</option>
+          <option>中国</option>
+        </select>
+      </label>
+      <label class="item item-input item-select">
+        <div class="input-label">
+          thanh pho|城市
+        </div>
+        <select ng-model="signupData.city">
+          <option selected>toan quoc</option>
+          <option>全国</option>
+          <option>laocai</option>
+          <option>河口</option>
+          <option>mangcai</option>
+          <option>东兴</option>
+          <option>langson</option>
+          <option>凭祥</option>
+        </select>
       </label>
       <label class="item item-input">
-        <span class="input-label">thanh pho</span>
-        <input type="text" placeholder="o thanh pho nao" ng-model="signupData.city" >
+        <span class="input-label">san pham|简单描述产品</span>
+        <input type="text" placeholder="" ng-model="signupData.description" >
       </label>
       <label class="item item-input">
-        <span class="input-label">mo ta</span>
-        <input type="text" placeholder="mot cau mo ta quan cafe" ng-model="signupData.description" >
+        <span class="input-label">so dien thoai|电话</span>
+        <input type="text" ng-model="signupData.telenumber" >
       </label>
       <label class="item item-input">
         <span class="input-label">Email</span>

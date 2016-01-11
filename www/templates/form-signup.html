@@ -8,37 +8,61 @@
     <form >
       <div class="list">
         <label class="item item-input">
-          <span class="input-label">ten cafe</span>
-          <input type="text" placeholder="ten cafe" ng-model="signupData.name" >
+          <span class="input-label">公司名|ten cong ty</span>
+          <input type="text" placeholder="" ng-model="signupData.name" >
+        </label>
+        <label class="item item-input item-select">
+          <div class="input-label">
+            国家|quoc tich
+          </div>
+          <select ng-model="signupData.nationality">
+            <option selected>vietnam</option>
+            <option>中国</option>
+          </select>
+        </label>
+        <label class="item item-input item-select">
+          <div class="input-label">
+            城市|thanh pho
+          </div>
+          <select ng-model="signupData.city">
+            <option>laocai</option>
+            <option>河口</option>
+            <option>mangcai</option>
+            <option>东兴</option>
+            <option>langson</option>
+            <option>凭祥</option>
+            <option>khac</option>
+            <option>其他</option>
+          </select>
         </label>
         <label class="item item-input">
-          <span class="input-label">thanh pho</span>
-          <input type="text" placeholder="o thanh pho nao" ng-model="signupData.city" >
+          <span class="input-label">产品|san pham</span>
+          <input type="text" placeholder="" ng-model="signupData.description" >
         </label>
         <label class="item item-input">
-          <span class="input-label">dia chi</span>
-          <input type="text" placeholder="dia chi" ng-model="signupData.description" >
+          <span class="input-label">电话|so dien thoai</span>
+          <input type="text" ng-model="signupData.telenumber" >
         </label>
         <label class="item item-input">
           <span class="input-label">Email</span>
-          <input type="text" ng-model="signupData.email" >
+          <input type="text" placeholder="必填 bat buoc phai co" ng-model="signupData.email" >
         </label>
         <label class="item item-input">
-          <span class="input-label">Password</span>
+          <span class="input-label">密码|mat khau</span>
           <input type="password" ng-model="signupData.password" >
         </label>
         <label class="item item-input">
-          <span class="input-label">Password Confirmation</span>
+          <span class="input-label">重复密码|mat khau nua</span>
           <input type="password" ng-model="signupData.password_confirmation" >
         </label>
         <label class="item">
           <button ngf-select="getFile(file)" ng-model="file" name="file" ngf-pattern="'image/*'"
           accept="image/*"  ngf-resize="{width: 80, height: 80, quality: 0.9, ratio: '1:1', centerCrop: true}" class="button button-assertive button-small" >
           click to set avatar
-          </button><button class="button-icon button-clear icon ion-images"></button>
-          <img id="avatar" ngf-no-object-url="true" ngf-src="file" ngf-resize="{width: 80, height: 80, quality: 0.9, ratio: '1:1', centerCrop: true}" />
-        </label>
-        <a ng-hide="avt" class="button button-small button-assertive"> please select a picture </a>
+        </button><button class="button-icon button-clear icon ion-images"></button>
+        <img id="avatar" ngf-no-object-url="true" ngf-src="file" ngf-resize="{width: 80, height: 80, quality: 0.9, ratio: '1:1', centerCrop: true}" />
+      </label>
+      <a ng-hide="avt" class="button button-small button-assertive"> please select a picture </a>
       <div style="margin-left:auto; margin-right:auto; margin-top:10px; max-width: 400px;">
         <button class="button button-block button-positive" ng-click="doSignup()">submit</button>
       </div>

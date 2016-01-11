@@ -18,21 +18,9 @@ angular.module('starter.controllers', [])
 
 })
 
-.controller('FormsCtrl', function($scope, $http, $state, $rootScope, $window, $stateParams, Session, User, Qiniu, $ionicSlideBoxDelegate) {
-  $scope.loginData = {email: "cf1@gmail.com", password: "191954"}
-  $scope.signupData = {name:'cf1'}; $rootScope.loginErr = ''; $rootScope.signupErr = ''
-  // $ionicSlideBoxDelegate.$getByHandle('my-handle')
-  $scope.nextSlide = function() {
-    $ionicSlideBoxDelegate.next();
-  }
-  $scope.preSlide = function() {
-    $ionicSlideBoxDelegate.previous();
-  }
-  $scope.slideHasChanged = function($index) {
-    // $ionicScrollDelegate.resize();
-    console.log($ionicSlideBoxDelegate.currentIndex() + 'ddddd')
-  }
-  // Perform the login action when the user submits the login form
+.controller('FormsCtrl', function($scope, $http, $state, $rootScope, $window, $stateParams, Session, User, Qiniu) {
+  $scope.loginData = {email: "zv1@gmail.com", password: "191954"}
+  $scope.signupData = {name:'zv1'}; $rootScope.loginErr = ''; $rootScope.signupErr = ''
   $scope.doLogin = function() {
     var sess = new Session($scope.loginData)
     sess.$save(function(data) {
