@@ -9,7 +9,7 @@ angular.module('starter.controllers', [])
     console.log($window.localStorage.token)
     $rootScope.loginErr = ''
     $rootScope.signupErr = ''
-    $state.go('tab.cafe', {}, {reload: true})
+    $state.go('tab.products', {}, {reload: true})
     $window.location.reload()
   }
   $scope.reload =function() {
@@ -29,7 +29,7 @@ angular.module('starter.controllers', [])
         $rootScope.currentUser = Boolean($window.localStorage.token)
         $http.defaults.headers.common['Authorization'] = "Token token=" + data.token
         console.log($window.localStorage.token)
-        $state.go('tab.cafe', {}, {reload: false})
+        $state.go('tab.products', {}, {reload: false})
       } else {
         console.log(data.err)
         $rootScope.loginErr = data.err
@@ -52,7 +52,7 @@ angular.module('starter.controllers', [])
           $rootScope.currentUser = Boolean($window.localStorage.token)
           $http.defaults.headers.common['Authorization'] = "Token token=" + data.token
           console.log($window.localStorage.token)
-          $state.go('tab.cafe', {}, {reload: true})
+          $state.go('tab.products', {}, {reload: true})
           // $window.location.reload()
         } else {
           console.log(data.err)
@@ -64,7 +64,7 @@ angular.module('starter.controllers', [])
 
 })
 
-.controller('HomeCtrl', function($scope, $http, $state, $rootScope, $window, $resource, Cafe, Product ) {
+.controller('HomeCtrl', function($scope, $http, $state, $rootScope, $window, $resource, Product ) {
   $scope.photos = []; $scope.page = 0; $scope.lastId = 0; $scope.limit = 5; $scope.dataLength = $scope.limit
   $scope.loadMore = function() {
     if ($scope.dataLength == $scope.limit){
@@ -84,7 +84,7 @@ angular.module('starter.controllers', [])
   $scope.loadMore()
 })
 
-.controller('UphotoCtrl', function($scope, $http, $state, $rootScope, $window, Qiniu, Cafe, Product) {
+.controller('UphotoCtrl', function($scope, $http, $state, $rootScope, $window, Qiniu, Product) {
   $scope.product = {content:''}; $scope.temfiles = []
   $scope.listFiles = function(f) {
     $scope.temfile = f ; //$scope.temfiles.push(f) // console.log($scope.cafe.content)
@@ -109,7 +109,7 @@ angular.module('starter.controllers', [])
   }
 })
 
-.controller('CafeCtrl', function($scope, $http, $rootScope, $state, $window, $resource, Cafe, Product) {
+.controller('ProductsCtrl', function($scope, $http, $rootScope, $state, $window, $resource, Product) {
   $scope.photos = []; $scope.page = 0; $scope.lastId = 0; $scope.limit = 5; $scope.dataLength = $scope.limit
   $scope.loadMore = function() {
       Product.query({page: $scope.page, lastId: $scope.lastId})
@@ -123,7 +123,7 @@ angular.module('starter.controllers', [])
 
 })
 
-.controller('UsersIdCtrl', function($scope, $http, $state, $rootScope, $stateParams, $window, $resource, Cafe, Product) {
+.controller('UsersIdCtrl', function($scope, $http, $state, $rootScope, $stateParams, $window, $resource, Product) {
   $scope.photos = []; $scope.page = 0; $scope.lastId = 0; $scope.limit = 5; $scope.dataLength = $scope.limit
   $scope.loadMore = function() {
     if ($scope.dataLength == $scope.limit){
@@ -153,6 +153,8 @@ angular.module('starter.controllers', [])
   Userup.get({id:0}).$promise.then(function(data) {
     // console.log(JSON.stringify(data))
     $scope.userupData.name = data.user.name
+    $scope.userupData.city = data.user.city
+    $scope.userupData.nationality = data.user.nationality
     $scope.userupData.description = data.user.description
     $scope.userupData.email = data.user.email
     $scope.userupData.avatar = data.user.avatar

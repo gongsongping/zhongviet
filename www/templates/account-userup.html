@@ -4,16 +4,44 @@
     <form >
       <div class="list">
         <label class="item item-input">
-          <span class="input-label">Name</span>
-          <input type="text" ng-model="userupData.name" >
+          <span class="input-label">公司名|ten cong ty</span>
+          <input type="text" placeholder="" ng-model="userupData.name" >
+        </label>
+        <label class="item item-input item-select">
+          <div class="input-label">
+            国家|quoc tich
+          </div>
+          <select ng-model="userupData.nationality">
+            <option selected>vietnam</option>
+            <option>中国</option>
+          </select>
+        </label>
+        <label class="item item-input item-select">
+          <div class="input-label">
+            城市|thanh pho
+          </div>
+          <select ng-model="userupData.city">
+            <option>laocai</option>
+            <option>河口</option>
+            <option>mangcai</option>
+            <option>东兴</option>
+            <option>langson</option>
+            <option>凭祥</option>
+            <option>khac</option>
+            <option>其他</option>
+          </select>
+        </label>
+        <label class="item item-input">
+          <span class="input-label">产品|san pham</span>
+          <input type="text" placeholder="" ng-model="userupData.description" >
+        </label>
+        <label class="item item-input">
+          <span class="input-label">电话|so dien thoai</span>
+          <input type="text" ng-model="userupData.telenumber" >
         </label>
         <label class="item item-input">
           <span class="input-label">Email</span>
-          <input type="text" ng-model="userupData.email" >
-        </label>
-        <label class="item item-input">
-          <span class="input-label">dia chi</span>
-          <input type="text" ng-model="userupData.description" >
+          <input type="text" placeholder="必填 bat buoc phai co" ng-model="userupData.email" >
         </label>
         <label class="item">
           <button ngf-select="getFile(file)" ng-model="file" name="file" ngf-pattern="'image/*'"

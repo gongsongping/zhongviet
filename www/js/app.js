@@ -109,22 +109,22 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
       }
     }
   })
-  .state('tab.cafe', {
-    url: '/cafe',
+  .state('tab.products', {
+    url: '/products',
     // cache: false,
     views: {
-      'tab-cafe': {
-        templateUrl: 'templates/tab-cafe.html',
-        controller: 'CafeCtrl'
+      'tab-products': {
+        templateUrl: 'templates/tab-products.html',
+        controller: 'ProductsCtrl'
       }
     }
   })
-  .state('tab.cafe-users-id', {
-    url: '/cafe/users/:id',
+  .state('tab.products-users-id', {
+    url: '/products/users/:id',
     // cache: false,
     views: {
-      'tab-cafe': {
-        templateUrl: 'templates/cafe-users-id.html',
+      'tab-products': {
+        templateUrl: 'templates/products-users-id.html',
         controller: 'UsersIdCtrl'
       }
     }
@@ -184,6 +184,6 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
   })
 
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/tab/cafe');
+  $urlRouterProvider.otherwise('/tab/products');
 
 });
