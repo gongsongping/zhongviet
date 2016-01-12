@@ -19,7 +19,7 @@ angular.module('starter.controllers', [])
 })
 
 .controller('FormsCtrl', function($scope, $http, $state, $rootScope, $window, $stateParams, Session, User, Qiniu) {
-  $scope.loginData = {email: "zv1@gmail.com", password: "191954"}
+  $rootScope.$broadcast('qiniuUPdate'); $scope.loginData = {email: "zv1@gmail.com", password: "191954"}
   $scope.signupData = {name:'zv1'}; $rootScope.loginErr = ''; $rootScope.signupErr = ''
   $scope.doLogin = function() {
     var sess = new Session($scope.loginData)
@@ -85,7 +85,7 @@ angular.module('starter.controllers', [])
 })
 
 .controller('UphotoCtrl', function($scope, $http, $state, $rootScope, $window, Qiniu, Product) {
-  $scope.product = {content:''}; $scope.temfiles = []
+  $rootScope.$broadcast('qiniuUPdate'); $scope.product = {content:''}; $scope.temfiles = []
   $scope.listFiles = function(f) {
     $scope.temfile = f ; //$scope.temfiles.push(f) // console.log($scope.cafe.content)
   }
@@ -148,7 +148,7 @@ angular.module('starter.controllers', [])
 
 })
 .controller('UserupCtrl', function($scope, $http, $state, $rootScope, $window, $resource, Qiniu) {
-  $scope.userupData = {}
+  $rootScope.$broadcast('qiniuUPdate'); $scope.userupData = {}
   var Userup =  $resource($rootScope.baseUrl + '/api/userup/:id')
   Userup.get({id:0}).$promise.then(function(data) {
     // console.log(JSON.stringify(data))
