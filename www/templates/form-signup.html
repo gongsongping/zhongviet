@@ -1,6 +1,6 @@
 <ion-view view-title="Signup">
   <ion-nav-buttons side="right">
-    <a href="#/tab/cafe" class="button button-icon button-clear ion-ios-close-empty" >
+    <a href="#/tab/products" class="button button-icon button-clear ion-ios-close-empty" >
     </a>
   </ion-nav-buttons>
   <ion-content>
@@ -8,12 +8,12 @@
     <form >
       <div class="list">
         <label class="item item-input">
-          <span class="input-label">公司名|ten cong ty</span>
+          <span class="input-label">产品 san pham</span>
           <input type="text" placeholder="" ng-model="signupData.name" >
         </label>
         <label class="item item-input item-select">
           <div class="input-label">
-            国家|quoc tich
+            国家 quoc tich
           </div>
           <select ng-model="signupData.nationality">
             <option selected>vietnam</option>
@@ -22,7 +22,7 @@
         </label>
         <label class="item item-input item-select">
           <div class="input-label">
-            城市|thanh pho
+            城市 thanh pho
           </div>
           <select ng-model="signupData.city">
             <option>laocai</option>
@@ -36,23 +36,19 @@
           </select>
         </label>
         <label class="item item-input">
-          <span class="input-label">产品|san pham</span>
-          <input type="text" placeholder="" ng-model="signupData.description" >
-        </label>
-        <label class="item item-input">
-          <span class="input-label">电话|so dien thoai</span>
-          <input type="text" ng-model="signupData.telenumber" >
+          <span class="input-label">简介 gioi thieu</span>
+          <input type="text" placeholder="公司信息 联系方式 gioi thieu cong ty" ng-model="signupData.description" >
         </label>
         <label class="item item-input">
           <span class="input-label">Email</span>
           <input type="text" placeholder="必填 bat buoc phai co" ng-model="signupData.email" >
         </label>
         <label class="item item-input">
-          <span class="input-label">密码|mat khau</span>
+          <span class="input-label">密码 mat khau</span>
           <input type="password" ng-model="signupData.password" >
         </label>
         <label class="item item-input">
-          <span class="input-label">重复密码|mat khau nua</span>
+          <span class="input-label">重复密码 mat khau nua</span>
           <input type="password" ng-model="signupData.password_confirmation" >
         </label>
         <label class="item">

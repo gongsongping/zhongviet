@@ -157,6 +157,7 @@ angular.module('starter.controllers', [])
     $scope.userupData.nationality = data.user.nationality
     $scope.userupData.description = data.user.description
     $scope.userupData.email = data.user.email
+    // $scope.userupData.telenumber = data.user.telenumber
     $scope.userupData.avatar = data.user.avatar
   })
   $scope.getFile = function(f) {
