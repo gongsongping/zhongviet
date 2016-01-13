@@ -1,11 +1,22 @@
-<div class="item item-avatar">
+<!-- <div class="item item-avatar">
   <img src="{{user.avatar}}">
   <h2>{{user.name}}</h2>
   <p>{{user.city}} {{user.nationality}}</p>
-  <!-- <div style="position:absolute;left:55%;top:0px;" class="item item-body">
-    <p style="position:relative;top:-30px;">{{user.description}}</p>
-  </div> -->
 </div>
 <div class="item item-body">
   <p style="position:relative;top:-20px;" >{{user.description}}</p>
+</div> -->
+<div class="row responsive-sm">
+  <div class="col">
+    <div class="item item-avatar">
+      <img src="{{user.avatar}}">
+      <h2>{{user.name}}</h2>
+      <p>{{user.city}} {{user.nationality}}</p>
+    </div>
+  </div>
+  <div class="col">
+    <div class="item item-body">
+      <p style="position:relative;top:-20px;" >{{user.description}}</p>
+    </div>
+  </div>
 </div>
