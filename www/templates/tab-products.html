@@ -1,7 +1,7 @@
 <ion-view view-title="">
-  <ion-nav-buttons  side="left">
+  <ion-nav-buttons side="left">
     <a ng-if="!currentUser" href="#/forms" class="button button-icon button-clear button-assertive" >
-      dang ky
+      注册 dang ky
     </a>
   </ion-nav-buttons>
   <ion-nav-buttons side="right">
@@ -9,6 +9,46 @@
     </button>
   </ion-nav-buttons>
   <ion-content style="">
+    <!-- <div class="button-bar">
+      <a class="button button-small " ui-sref-active="active"   href="#/tab/products/city/河口">河口</a>
+      <a class="button button-small " ui-sref-active="active"   href="#/tab/products/city/laocai">lao cai</a>
+      <a class="button button-small " ui-sref-active="active"   href="#/tab/products/city/凭祥">凭祥</a>
+      <a class="button button-small " ui-sref-active="active"   href="#/tab/products/city/luongson">luong son</a>
+      <a class="button button-small " ui-sref-active="active"   href="#/tab/products/city/东兴">东兴</a>
+      <a class="button button-small " ui-sref-active="active"   href="#/tab/products/city/mangcai">mang cai</a>
+    </div> -->
+    <div class="row responsive-sm">
+      <div class="col">
+        <a class="item item-icon-right" href="#/tab/products/city/河口">
+          河口 <i class="icon ion-chevron-right icon-accessory"></i>
+        </a>
+      </div>
+      <div class="col">
+        <a class="item item-icon-right" href="#/tab/products/city/laocai">
+          lao cai <i class="icon ion-chevron-right icon-accessory"></i>
+        </a>
+      </div>
+      <div class="col">
+        <a class="item item-icon-right" href="#/tab/products/city/凭祥">
+          凭祥 <i class="icon ion-chevron-right icon-accessory"></i>
+        </a>
+      </div>
+      <div class="col">
+        <a class="item item-icon-right" href="#/tab/products/city/langson">
+          lang son <i class="icon ion-chevron-right icon-accessory"></i>
+        </a>
+      </div>
+      <div class="col">
+        <a class="item item-icon-right" href="#/tab/products/city/东兴">
+          东兴 <i class="icon ion-chevron-right icon-accessory"></i>
+        </a>
+      </div>
+      <div class="col">
+        <a class="item item-icon-right" href="#/tab/products/city/mangcai">
+          mang cai <i class="icon ion-chevron-right icon-accessory"></i>
+        </a>
+      </div>
+    </div>
     <div style="margin-left:0px; margin-right:auto; max-width:800px;">
       <div ng-style="{'margin-left' : 'auto', 'margin-right' : 'auto','max-width':{{containerwidth}}+'px' }">
         <div collection-repeat="p in photos"  ng-style="{'width':(1/3)*{{containerwidth}}+'px', 'height':(1/3)*{{containerwidth}}+'px', 'float':'left', 'overflow':'hidden'}">

@@ -121,6 +121,16 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
       }
     }
   })
+  .state('tab.products-city', {
+    url: '/products/city/:city',
+    cache: false,
+    views: {
+      'tab-products': {
+        templateUrl: 'templates/products-city.html',
+        controller: 'ProductsCityCtrl'
+      }
+    }
+  })
   .state('tab.products-users-id', {
     url: '/products/users/:id',
     // cache: false,

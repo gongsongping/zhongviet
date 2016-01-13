@@ -109,10 +109,24 @@ angular.module('starter.controllers', [])
   }
 })
 
-.controller('ProductsCtrl', function($scope, $http, $rootScope, $state, $window, $resource, Product) {
+.controller('ProductsCtrl', function($scope, $stateParams, $rootScope, $state, $window, $resource, Product) {
   $scope.photos = []; $scope.page = 0; $scope.lastId = 0; $scope.limit = 5; $scope.dataLength = $scope.limit
   $scope.loadMore = function() {
       Product.query({page: $scope.page, lastId: $scope.lastId})
+      .$promise.then(function(data) {
+        console.log(JSON.stringify(data))
+        $scope.photos = $scope.photos.concat(data)
+        $scope.page += 1
+        $scope.$broadcast('scroll.infiniteScrollComplete')
+      })
+  }
+
+})
+.controller('ProductsCityCtrl', function($scope, $stateParams, $rootScope, $state, $window, $resource, Product) {
+  console.log($stateParams.city)
+  $scope.photos = []; $scope.page = 0; $scope.lastId = 0; $scope.limit = 5; $scope.dataLength = $scope.limit
+  $scope.loadMore = function() {
+      Product.query({city:$stateParams.city, page: $scope.page, lastId: $scope.lastId})
       .$promise.then(function(data) {
         console.log(JSON.stringify(data))
         $scope.photos = $scope.photos.concat(data)
