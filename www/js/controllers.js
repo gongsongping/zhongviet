@@ -123,7 +123,6 @@ angular.module('starter.controllers', [])
 
 })
 .controller('ProductsCityCtrl', function($scope, $stateParams, $rootScope, $state, $window, $resource, Product) {
-  console.log($stateParams.city)
   $scope.photos = []; $scope.page = 0; $scope.lastId = 0; $scope.limit = 5; $scope.dataLength = $scope.limit
   $scope.loadMore = function() {
       Product.query({city:$stateParams.city, page: $scope.page, lastId: $scope.lastId})
