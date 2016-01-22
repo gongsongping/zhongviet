@@ -19,7 +19,7 @@ angular.module('starter.controllers', [])
 })
 
 .controller('FormsCtrl', function($scope, $http, $state, $rootScope, $window, $stateParams, Session, User, Qiniu) {
-  $rootScope.$broadcast('qiniuUPdate'); $scope.loginData = {email: "zv1@gmail.com", password: "191954"}
+  $rootScope.$broadcast('qiniuUPdate'); $scope.loginData = {email: "zv1@gmail.com", password: ""}
   $scope.signupData = {name:'zv1'}; $rootScope.loginErr = ''; $rootScope.signupErr = ''
   $scope.doLogin = function() {
     var sess = new Session($scope.loginData)
