@@ -50,7 +50,7 @@
         <div class="col" style="padding:0.5px;">
           <div ng-repeat="p in photos1" style="position:relative;">
             <a  href="#/tab/products/users/{{p.user.id}}">
-              <img ng-src="{{p.url}}" alt='' width="100%" />
+              <img ng-src="{{p.url+'?imageView2/2/w/200'}}" alt='' width="100%" />
               <p style="position: absolute; bottom:-5px; background-color:lightgray; color:black;">{{p.user.name}} {{p.user.description}}</p>
             </a>
           </div>
@@ -58,7 +58,7 @@
         <div class="col" style="padding:0.5px;">
           <div ng-repeat="p in photos2" style="position:relative;">
             <a  href="#/tab/products/users/{{p.user.id}}">
-              <img ng-src="{{p.url}}" alt='' width="100%" />
+              <img ng-src="{{p.url+'?imageView2/2/w/200'}}" alt='' width="100%" />
               <p style="position: absolute; bottom:-5px; background-color:lightgray; color:black;">{{p.user.name}} {{p.user.description}}</p>
             </a>
           </div>
@@ -66,7 +66,7 @@
         <div class="col" style="padding:0.5px;">
           <div ng-repeat="p in photos3" style="position:relative;">
             <a  href="#/tab/products/users/{{p.user.id}}">
-              <img ng-src="{{p.url}}" alt='' width="100%"  />
+              <img ng-src="{{p.url+'?imageView2/2/w/200'}}" alt='' width="100%"  />
               <p style="position: absolute; bottom:-5px; background-color:lightgray; color:black;">{{p.user.name}} {{p.user.description}}</p>
             </a>
           </div>
