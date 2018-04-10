@@ -9,9 +9,9 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
 .run(function($ionicPlatform, $http, $window, $rootScope, $state, $resource) {
   // $rootScope.baseUrl = "http://localhost:3000"
   //  $rootScope.baseUrl = "http://162.243.143.15"
-  $rootScope.baseUrl = "http://changiif.com"
+  $rootScope.baseUrl = "http://gongsongping.com"
   $rootScope.$on('qiniuUPdate', function() {
-    $resource('http://changiif.com/uptoken').get().$promise.then(function(data) {
+    $resource('http://gongsongping.com/uptoken').get().$promise.then(function(data) {
       $window.localStorage.qiniuToken = data.uptoken
       // console.log('qiniuT  ' + $window.localStorage.qiniuToken)
     })
